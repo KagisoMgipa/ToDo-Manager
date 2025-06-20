@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Welcome | ToDo Manager</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
+  
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="index.html">🏠 Welcome</a>
+</nav>
+
+  <label>
+    <input type="checkbox" id="darkToggle" />
+    Dark Mode
+  </label>
+
+  <h1>📋 Welcome to Your ToDo Manager</h1>
+  <p class="subtitle">Track your tasks daily, weekly, and monthly.</p>
+
+  <div class="btn-group">
+    <button onclick="location.href='daily.html'" style="position: relative;">
+  Daily
+  <span id="daily-badge" style="
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+    display: none;
+  "></span>
+</button>
+
+    <button onclick="location.href='weekly.html'" style="position: relative;">
+  Weekly
+  <span id="weekly-badge" style="
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+    display: none;
+  "></span>
+</button>
+
+    <button onclick="location.href='monthly.html'" style="position: relative;">
+  Monthly
+  <span id="monthly-badge" style="
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+    display: none;
+  "></span>
+</button>
+
+  </div>
+
+<div class="progress-container">
+  <label>Daily Progress</label>
+  <div class="progress-bar">
+    <div id="daily-progress" class="progress-fill">
+      <span id="daily-percent" class="progress-percent">0%</span>
+    </div>
+  </div>
+</div>
+
+<div class="progress-container">
+  <label>Weekly Progress</label>
+  <div class="progress-bar">
+    <div id="weekly-progress" class="progress-fill">
+      <span id="weekly-percent" class="progress-percent">0%</span>
+    </div>
+  </div>
+</div>
+
+<div class="progress-container">
+  <label>Monthly Progress</label>
+  <div class="progress-bar">
+    <div id="monthly-progress" class="progress-fill">
+      <span id="monthly-percent" class="progress-percent">0%</span>
+    </div>
+  </div>
+</div>
+
+<script src="js/index.js"></script>
+
+</body>
+</html>
