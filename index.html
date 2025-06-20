@@ -2,101 +2,110 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Welcome | ToDo Manager</title>
+  <title>ToDo Manager - Home</title>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css" />
-  
+  <style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #f5f7fa, #c3cfe2);
+      text-align: center;
+    }
+    .hero {
+      padding: 80px 20px 40px;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      color: #555;
+    }
+    .button-group {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 40px 0;
+      flex-wrap: wrap;
+    }
+    .button-group a {
+      background-color: #4a90e2;
+      color: white;
+      padding: 15px 30px;
+      text-decoration: none;
+      font-size: 1.2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: background 0.3s;
+    }
+    .button-group a:hover {
+      background-color: #357ab7;
+    }
+    .progress-section {
+      max-width: 600px;
+      margin: 0 auto 60px;
+    }
+    .progress-item {
+      margin: 20px 0;
+      text-align: left;
+    }
+    .progress-bar {
+      background: #e0e0e0;
+      height: 20px;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      background: #4caf50;
+      width: 0%;
+    }
+    footer {
+      background: #333;
+      color: white;
+      padding: 15px;
+    }
+  </style>
 </head>
 <body>
-
-<nav class="navbar">
-  <a href="index.html">🏠 Welcome</a>
-</nav>
-
-  <label>
-    <input type="checkbox" id="darkToggle" />
-    Dark Mode
-  </label>
-
-  <h1>📋 Welcome to Your ToDo Manager</h1>
-  <p class="subtitle">Track your tasks daily, weekly, and monthly.</p>
-
-  <div class="btn-group">
-    <button onclick="location.href='daily.html'" style="position: relative;">
-  Daily
-  <span id="daily-badge" style="
-    position: absolute;
-    top: -8px;
-    right: -8px;
-    background: red;
-    color: white;
-    border-radius: 50%;
-    padding: 2px 6px;
-    font-size: 12px;
-    display: none;
-  "></span>
-</button>
-
-    <button onclick="location.href='weekly.html'" style="position: relative;">
-  Weekly
-  <span id="weekly-badge" style="
-    position: absolute;
-    top: -8px;
-    right: -8px;
-    background: red;
-    color: white;
-    border-radius: 50%;
-    padding: 2px 6px;
-    font-size: 12px;
-    display: none;
-  "></span>
-</button>
-
-    <button onclick="location.href='monthly.html'" style="position: relative;">
-  Monthly
-  <span id="monthly-badge" style="
-    position: absolute;
-    top: -8px;
-    right: -8px;
-    background: red;
-    color: white;
-    border-radius: 50%;
-    padding: 2px 6px;
-    font-size: 12px;
-    display: none;
-  "></span>
-</button>
-
+  <div class="hero">
+    <h1>Welcome to ToDo Manager</h1>
+    <p>Track and manage your tasks daily, weekly, and monthly in one place.</p>
   </div>
 
-<div class="progress-container">
-  <label>Daily Progress</label>
-  <div class="progress-bar">
-    <div id="daily-progress" class="progress-fill">
-      <span id="daily-percent" class="progress-percent">0%</span>
+  <div class="button-group">
+    <a href="daily.html">🗓️ Daily Tasks</a>
+    <a href="weekly.html">📅 Weekly Goals</a>
+    <a href="monthly.html">📆 Monthly Plans</a>
+  </div>
+
+  <div class="progress-section">
+    <div class="progress-item">
+      <label>Daily Progress</label>
+      <div class="progress-bar"><div id="dailyProgress" class="progress-fill"></div></div>
+    </div>
+    <div class="progress-item">
+      <label>Weekly Progress</label>
+      <div class="progress-bar"><div id="weeklyProgress" class="progress-fill"></div></div>
+    </div>
+    <div class="progress-item">
+      <label>Monthly Progress</label>
+      <div class="progress-bar"><div id="monthlyProgress" class="progress-fill"></div></div>
     </div>
   </div>
-</div>
 
-<div class="progress-container">
-  <label>Weekly Progress</label>
-  <div class="progress-bar">
-    <div id="weekly-progress" class="progress-fill">
-      <span id="weekly-percent" class="progress-percent">0%</span>
-    </div>
-  </div>
-</div>
+  <footer>
+    &copy; 2025 ToDo Manager. Built with ❤️ by Kagiso.
+  </footer>
 
-<div class="progress-container">
-  <label>Monthly Progress</label>
-  <div class="progress-bar">
-    <div id="monthly-progress" class="progress-fill">
-      <span id="monthly-percent" class="progress-percent">0%</span>
-    </div>
-  </div>
-</div>
-
-<script src="js/index.js"></script>
-
+  <script>
+    // Load progress from localStorage
+    document.getElementById("dailyProgress").style.width = (localStorage.getItem("dailyProgress") || 0) + "%";
+    document.getElementById("weeklyProgress").style.width = (localStorage.getItem("weeklyProgress") || 0) + "%";
+    document.getElementById("monthlyProgress").style.width = (localStorage.getItem("monthlyProgress") || 0) + "%";
+  </script>
 </body>
 </html>
