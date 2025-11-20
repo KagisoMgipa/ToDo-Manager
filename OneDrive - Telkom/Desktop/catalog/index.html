@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dermilux Skincare</title>
+  <!-- Font Awesome for social icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- HEADER + LOGO -->
+  <header class="header" id="header">
+    <img src="images/76a3865e-6ec3-4ebc-91dc-a82bc46e2604.jpg" alt="Dermilux Logo" class="logo">
+    <nav class="nav">
+      <a href="#">Home</a>
+      <a href="#products">Products</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content" data-aos="fade-up">
+        <div class="sparkle" style="top: 20%; left: 30%; animation-delay: 0s;"></div>
+        <div class="sparkle" style="top: 50%; left: 60%; animation-delay: 1s;"></div>
+        <div class="sparkle" style="top: 55%; left: 40%; animation-delay: 2s;"></div>
+        <div class="sparkle" style="top: 35%; left: 55%; animation-delay: 1.5s;"></div>
+
+      <h1>Glow Naturally with Dermilux</h1>
+      <p>Brighten, nourish, and rejuvenate your skin with organic turmeric skincare.</p>
+      <a href="#products" class="hero-btn">Shop Now</a>
+    </div>
+  </section>
+
+  <!-- PRODUCT GRID SECTION -->
+  <section id="products" class="products-section">
+    <div class="float-shape shape1"></div>
+    <div class="float-shape shape2"></div>
+    <div class="float-shape shape3"></div>
+
+    <h2 class="section-title" data-aos="fade-up">Our Products</h2>
+
+    <div class="product-grid">
+      <!-- Brightening Turmeric Cream -->
+      <div class="product-card" data-aos="zoom-in">
+        <img src="images/WhatsApp Image 2025-11-18 at 20.28.32.jpeg" alt="Brightening Turmeric Cream">
+        <h3>Brightening Turmeric Cream</h3>
+        <p class="price">R180</p>
+        <p class="desc">Boosts radiance, evens skin tone, reduces acne and inflammation.</p>
+        <button class="btn">Add to Cart</button>
+      </div>
+
+      <!-- Turmeric & Honey Soap -->
+      <div class="product-card" data-aos="zoom-in" data-aos-delay="100">
+        <img src="images/23bd69e8-4c4e-4c46-b0bf-4de2181dc273.jpg" alt="Turmeric & Honey Soap">
+        <h3>Turmeric & Honey Soap</h3>
+        <p class="price">R60</p>
+        <p class="desc">Reduces dark spots, cleans deeply, and soothes sensitive skin.</p>
+        <button class="btn">Add to Cart</button>
+      </div>
+
+      <!-- Zero Dark Spots Serum -->
+      <div class="product-card" data-aos="zoom-in" data-aos-delay="200">
+        <img src="images/24a29689-cee8-42b4-83f6-08d9ee6e5719.jpg" alt="Zero Dark Spots Serum">
+        <h3>Zero Dark Spots Serum</h3>
+        <p class="price">R130</p>
+        <p class="desc">Targets hyperpigmentation and improves overall skin tone.</p>
+        <button class="btn">Add to Cart</button>
+      </div>
+
+      <!-- Kojic & Turmeric Scrub -->
+      <div class="product-card" data-aos="zoom-in" data-aos-delay="300">
+        <img src="images/4eb99a3c-73c5-4152-878d-9f8a0bcc8c43.jpg" alt="Kojic & Turmeric Scrub">
+        <h3>Kojic & Turmeric Scrub</h3>
+        <p class="price">R150</p>
+        <p class="desc">Exfoliates, brightens the skin, and fades stubborn dark marks.</p>
+        <button class="btn">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section id="about" class="about-section" data-aos="fade-up">
+    <h2 class="section-title">About Our Brand</h2>
+    <p>
+      Dermilux is dedicated to creating natural skincare solutions powered by turmeric,
+      honey, and high-quality botanicals. Our mission is to help you achieve glowing,
+      healthy, even-toned skin using safe and effective ingredients.
+    </p>
+  </section>
+
+  <!-- FOOTER -->
+<footer class="footer" id="contact">
+  <p>© 2025 Dermilux Skincare. All rights reserved.</p>
+  <p>Email: dermilux@gmail.com | WhatsApp: +27 71 481 3411</p>
+
+  <!-- Social Icons -->
+  <div class="social-icons">
+    <a href="https://wa.me/27714813411" target="_blank" aria-label="WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="https://www.facebook.com/yourpage" target="_blank" aria-label="Facebook">
+      <i class="fab fa-facebook-f"></i>
+    </a>
+    <a href="https://www.instagram.com/yourpage" target="_blank" aria-label="Instagram">
+      <i class="fab fa-instagram"></i>
+    </a>
+  </div>
+
+  <!-- QR code placeholder -->
+  <div class="qr-code">
+    <img src="images/dermilux-qr.png" alt="Scan to visit Dermilux website">
+  </div>
+</footer>
+
+
+  <!-- AOS Animation Library -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true,
+      offset: 100
+    });
+
+    // Header scroll effect
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+  </script>
+
+<!-- Floating Social Buttons -->
+<div class="floating-social">
+  <a href="https://wa.me/27714813411" target="_blank" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  <a href="https://www.facebook.com/yourpage" target="_blank" aria-label="Facebook">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+  <a href="https://www.instagram.com/yourpage" target="_blank" aria-label="Instagram">
+    <i class="fab fa-instagram"></i>
+  </a>
+</div>
+
+</body>
+</html>
