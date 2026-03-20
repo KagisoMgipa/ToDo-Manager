@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Daily ToDo List</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <nav class="navbar">
+  <a href="index.html">🏠 Welcome</a>
+  <a href="daily.html">🗓️ Daily <span id="daily-badge" class="badge"></span></a>
+  <a href="weekly.html">📅 Weekly</a>
+  <a href="monthly.html">📆 Monthly</a>
+</nav>
+
+    
+  <label>
+    <input type="checkbox" id="darkToggle" />
+    Dark Mode
+  </label>
+
+  <div class="title-container">
+    <h1 class="todo-title">🗓️ Daily ToDo List</h1>
+    <p class="subtitle">Stay on top of your daily goals</p>
+  </div>
+
+  <div class="input-wrapper">
+    <input id="itemInput" type="text" placeholder="Add an item" />
+    <input id="dueDateInput" type="date" min="" />
+    <select id="prioritySelect" class="priority-dropdown">
+      <option value="Low">✅ Low</option>
+      <option value="Medium" selected>⚠️ Medium</option>
+      <option value="High">🔥 High</option>
+    </select>
+    <button onclick="addItem()">Add Task</button>
+  </div>
+
+  <div class="progress-container">
+    <label>Progress</label>
+    <div class="progress-bar">
+      <div id="progress-fill"></div>
+    </div>
+  </div>
+
+  <div style="text-align: center; margin-top: 20px;">
+  <button onclick="resetAll()" class="reset-btn">Reset All Tasks</button>
+</div>
+
+  <div class="container">
+    <div class="column">
+      <h2 class="section-title">To Do</h2>
+      <div id="todoList"></div>
+    </div>
+    <div class="column">
+      <h2 class="section-title">Done</h2>
+      <div id="doneList"></div>
+    </div>
+  </div>
+
+  <div id="editModal" class="modal" style="display:none;">
+  <div class="modal-content">
+    <h3>Edit Task</h3>
+    <input id="editText" type="text" placeholder="Task name" />
+    <input id="editDate" type="date" />
+    <select id="editPriority">
+      <option value="Low">✅ Low</option>
+      <option value="Medium">⚠️ Medium</option>
+      <option value="High">🔥 High</option>
+    </select>
+    <button onclick="saveEdit()">Save</button>
+    <button onclick="closeEditModal()">Cancel</button>
+  </div>
+</div>
+
+<script>
+  function resetAll() {
+    if (confirm("Are you sure you want to clear all Monthly tasks?")) {
+      localStorage.removeItem("todoItemsMonthly");
+      localStorage.removeItem("doneItemsMonthly");
+      localStorage.removeItem("monthlyProgress");
+      location.reload();
+    }
+  }
+</script>
+
+  <script src="js/daily.js"></script>
+</body>
+</html>

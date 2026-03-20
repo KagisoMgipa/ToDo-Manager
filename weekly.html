@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Weekly ToDo List</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+<nav class="navbar">
+  <a href="index.html">🏠 Welcome</a>
+  <a href="daily.html">🗓️ Daily</a>
+  <a href="weekly.html">📅 Weekly</a>
+  <a href="monthly.html">📆 Monthly</a>
+</nav>
+
+  <label>
+    <input type="checkbox" id="darkToggle" />
+    Dark Mode
+  </label>
+
+  <div class="title-container">
+    <h1 class="todo-title">🗓️ Weekly ToDo List</h1>
+    <p class="subtitle">Plan your weekly tasks by priority and deadline</p>
+  </div>
+
+  <div class="input-row">
+    <input id="itemInput" type="text" placeholder="Add a weekly task" />
+    <input id="dueDateInput" type="date" min="" />
+    <select id="prioritySelect" class="priority-dropdown">
+      <option value="Low">✅ Low</option>
+      <option value="Medium" selected>⚠️ Medium</option>
+      <option value="High">🔥 High</option>
+    </select>
+    <button onclick="addItem()">Add Task</button>
+  </div>
+
+  <div class="progress-container">
+    <label>Progress</label>
+    <div class="progress-bar">
+      <div id="progress-fill"></div>
+    </div>
+  </div>
+
+  <div style="text-align: center; margin-top: 20px;">
+  <button onclick="resetAll()" class="reset-btn">Reset All Tasks</button>
+</div>
+
+
+  <div class="container">
+    <div class="column">
+      <h2 class="section-title">To Do</h2>
+      <div id="todoList"></div>
+    </div>
+    <div class="column">
+      <h2 class="section-title">Done</h2>
+      <div id="doneList"></div>
+    </div>
+  </div>
+
+<!-- Edit Modal -->
+<div id="editModal" class="modal">
+  <div class="modal-content">
+    <h2>Edit Task</h2>
+    <input type="text" id="editText" placeholder="Edit task" />
+    <input type="date" id="editDate" />
+    <select id="editPriority">
+      <option value="Low">✅ Low</option>
+      <option value="Medium">⚠️ Medium</option>
+      <option value="High">🔥 High</option>
+    </select>
+    <button id="saveEdit">Save</button>
+    <button id="cancelEdit">Cancel</button>
+  </div>
+</div>
+
+
+  <script src="js/weekly.js"></script>
+</body>
+</html>
